@@ -185,7 +185,8 @@ Open the Power BI file inside the Dashboard folder.
 
 ### ER Diagram
 
-(Add image here)
+<img width="1206" height="821" alt="image" src="https://github.com/user-attachments/assets/55fd919f-579f-4c33-b765-6de3faaa450d" />
+
 
 ### Dashboard
 
