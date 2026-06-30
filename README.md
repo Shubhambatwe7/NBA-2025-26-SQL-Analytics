@@ -136,7 +136,7 @@ The Power BI dashboard includes:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/NBA-2025-26-SQL-Analytics.git
+git clone https://github.com/Shubhambatwe7/NBA-2025-26-SQL-Analytics.git
 ```
 
 ### 2. Open MySQL Workbench
