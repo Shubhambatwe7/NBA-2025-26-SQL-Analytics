@@ -1,0 +1,78 @@
+/*============================================================
+SECTION 4 : AGGREGATE ANALYSIS
+============================================================*/
+
+-- Top 10 scorers
+
+SELECT
+    p.player_name,
+    SUM(ps.points) AS TotalPoints
+FROM Players p
+JOIN PlayerStats ps
+ON p.player_id = ps.player_id
+GROUP BY p.player_id, p.player_name
+ORDER BY TotalPoints DESC
+LIMIT 10;
+
+--Top Rebounders
+
+SELECT
+    p.player_name,
+    SUM(ps.rebounds) AS TotalRebounds
+FROM Players p
+JOIN PlayerStats ps
+ON p.player_id = ps.player_id
+GROUP BY p.player_id, p.player_name
+ORDER BY TotalRebounds DESC
+LIMIT 10;
+
+--Assist Leaders
+
+SELECT
+    p.player_name,
+    SUM(ps.assists) AS TotalAssists
+FROM Players p
+JOIN PlayerStats ps
+ON p.player_id = ps.player_id
+GROUP BY p.player_id, p.player_name
+ORDER BY TotalAssists DESC
+LIMIT 10;
+
+-- Most wins
+
+SELECT
+    t.team_name,
+    COUNT(*) AS TotalWins
+FROM Games g
+JOIN Teams t
+ON g.winner = t.team_id
+GROUP BY t.team_id, t.team_name
+ORDER BY TotalWins DESC;
+
+
+--Average Points Per Game by Player
+
+SELECT
+    p.player_name,
+    ROUND(AVG(ps.points),2) AS AvgPoints
+FROM Players p
+JOIN PlayerStats ps
+ON p.player_id = ps.player_id
+GROUP BY p.player_id, p.player_name
+ORDER BY AvgPoints DESC
+LIMIT 10;
+
+
+--Highest Average Field Goal Percentage
+
+SELECT
+    p.player_name,
+    ROUND(AVG(ps.fg_percent),2) AS AvgFG
+FROM Players p
+JOIN PlayerStats ps
+ON p.player_id = ps.player_id
+GROUP BY p.player_id, p.player_name
+ORDER BY AvgFG DESC
+LIMIT 10;
+
+
